@@ -16,7 +16,7 @@ class line_trace:
         sub = rospy.Subscriber('/e', Float64, self.callback, queue_size=10)
         sub2 = rospy.Subscriber('/center', Float64, self.callback2, queue_size=10)
         self.vel = Twist()
-        rospy.sleep(0.5)
+        rospy.sleep(1)
     
     def handler(self, signal, frame):
         if not self.switch_motors(False):
@@ -44,11 +44,11 @@ class line_trace:
         if not self.switch_motors(True):
             print "[check failed]: motors are not empowered"
         while not rospy.is_shutdown():
-            e = 320 -self.center
+            e = 320 - self.center
             vel = abs(self.e)
-            self.vel.angular.z = e * 0.0055
+            self.vel.angular.z = e * 0.0045
             if vel > 30 : vel  = 30
-            self.vel.linear.x = -(50 - vel) * 0.0035
+            self.vel.linear.x = -(50 - vel) * 0.004
             self.pub.publish(self.vel)
 
 if __name__ == '__main__':
