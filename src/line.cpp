@@ -1,3 +1,23 @@
+/*
+ * line.cpp
+ * visual line trace
+ *
+ * Copyright (C) 2017 Masaya Okawa <masamasa9841@gmail.com>
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ * 
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
 #include <ros/ros.h>
 #include <std_msgs/Float64.h>
 #include <image_transport/image_transport.h>
@@ -57,7 +77,6 @@ public:
     cv::line(cv_ptr->image, cv::Point(100,line_1), cv::Point(width-100, line_1), CV_RGB(255, 0, 0), 2);
     cv::line(cv_ptr->image, cv::Point(100,line_2), cv::Point(width-100, line_2), CV_RGB(0, 0, 255), 2);
     int count[] = {0,0}, sensor_data[] = {0,0};
-    
     for (int i = 100; i < width-100; i++) {
         if (int(color_mask.at<uchar>(line_1, i)) == 255){
             count[0]++;
