@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="pimouse_visual_line_trace" name="image_convert" type="line_trace"/>
+  <node pkg="pimouse_visual_line_trace" name="line_trace" type="p.py"/>
+</launch>
