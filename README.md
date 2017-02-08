@@ -16,7 +16,7 @@ cd ~/catkin_ws/src
 git clone https://github.com/masamasa9841/pimouse_visual_line_trace.git
 ```
 
-Next, catkin_make
+Next, catkin_make command
 
 ```
 cd ~/catkin_ws
