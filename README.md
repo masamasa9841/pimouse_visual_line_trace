@@ -9,6 +9,11 @@
 
 ### Software
 
+If, cv_camera has not
+```
+sudo apt install ros-kinetic-cv_camera
+```
+
 First, move into catkin_ws/src and download this repository.
 
 ```
@@ -20,11 +25,12 @@ Next, catkin_make command
 
 ```
 cd ~/catkin_ws
-catkine_make
+catkin_make
 ```
 ### Usage
 ```
 roslaunch pimouse_visual_line_trace pimouse_visual_line_trace.launch
+rosrun cv_camera cv_camera_node
 ```
 ### License
 
