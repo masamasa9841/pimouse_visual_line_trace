@@ -29,8 +29,8 @@ catkin_make
 ```
 ### Usage
 ```
-roslaunch pimouse_visual_line_trace pimouse_visual_line_trace.launch
 rosrun cv_camera cv_camera_node
+roslaunch pimouse_visual_line_trace pimouse_visual_line_trace.launch
 ```
 ### License
 
